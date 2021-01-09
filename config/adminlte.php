@@ -45,8 +45,8 @@ return [
     |
     */
 
-    'logo' => '<b>Sistema </b>ADMINISTRATIVO',
-    'logo_img' => null,
+    'logo' => '</b>ADMINISTRATIVO',
+    'logo_img' => true,
     'logo_img_class' => null,
     'logo_img_xl' => null,
     'logo_img_xl_class' => null,
@@ -85,9 +85,9 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => true,
-    'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => null,
+    'layout_fixed_sidebar' => null,
+    'layout_fixed_navbar' => true,
+    'layout_fixed_footer' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -224,9 +224,16 @@ return [
     */
 
     'menu' => [
+        'MENU',
+        [
+            'text'    => 'Dashboard',
+            'url'     => 'home',
+            'icon'    => 'fas fa-home nav-icon',
+        ],
         [
             'text'    => 'Entrada',
             'icon'    => 'fas fa-arrow-circle-down nav-icon',
+            'classes' => 'menu-open',
             'submenu' => [
                 [
                     'text' => 'Novo Fornecedor',
@@ -244,6 +251,7 @@ return [
         [
             'text'    => 'Saída',
             'icon'    => 'fas fa-arrow-alt-circle-up nav-icon',
+            'classes' => 'menu-open',
             'submenu' => [
                 [
                     'text' => 'Novo Cliente',
@@ -261,6 +269,7 @@ return [
         [
             'text'    => 'Financeiro',
             'icon'    => 'fas fa-money-check-alt nav-icon',
+            'classes' => 'menu-open',
             'submenu' => [
                 [
                     'text' => 'Novo Lançamento',
