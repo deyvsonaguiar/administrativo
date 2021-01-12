@@ -7,7 +7,7 @@
 @stop
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('empresa.index') }}">Listagem</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('empresas.index') }}">Listagem</a></li>
 @endsection
 
 @section('content')

@@ -62,10 +62,9 @@
 
         </div>
 
-        {{-- Footer --}}
-        @hasSection('footer')
-            @include('adminlte::partials.footer.footer')
-        @endif
+        <footer class="main-footer">
+            <strong>Copyright &copy; 2020.</strong> All rights reserved.
+        </footer>
 
         {{-- Right Control Sidebar --}}
         @if(config('adminlte.right_sidebar'))
