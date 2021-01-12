@@ -38,9 +38,20 @@
             {{-- Content Header --}}
             <div class="content-header">
                 <div class="{{ config('adminlte.classes_content_header') ?: $def_container_class }}">
-                    @yield('content_header')
-                </div>
+                    <div class="row mb-2">
+                      <div class="col-sm-6">
+                        @yield('content_header')
+                      </div>
+                      <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                          <li class="breadcrumb-item"><a href="{{ route('home') }}">Dashboard</a></li>
+                          @yield('breadcrumb')
+                        </ol>
+                      </div>
+                    </div>
+                  </div><!-- /.container-fluid -->
             </div>
+
 
             {{-- Main Content --}}
             <div class="content">
