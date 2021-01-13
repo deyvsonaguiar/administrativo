@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Empresa;
 
 class EmpresaController extends Controller
 {
@@ -13,7 +14,8 @@ class EmpresaController extends Controller
      */
     public function index()
     {
-        return view('empresa.index');
+        $empresas = Empresa::paginate(1);
+        return view('empresa.index', ['empresas' => $empresas]);
     }
 
     /**
