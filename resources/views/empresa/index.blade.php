@@ -7,7 +7,7 @@
 @stop
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('empresas.index') }}">Listagem de {{ $tipo }}</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('empresas.index') }}?tipo={{ $tipo }}">Listagem de {{ $tipo }}</a></li>
 @endsection
 
 @section('content')
@@ -20,7 +20,7 @@
                         <h3 class="card-title">Lista de {{ $tipo }}</h3>
                     </div>
                     <div class="col-sm-2" style="text-align: end">
-                        <button type="button" class="btn-success btn-sm">Novo {{ $tipo }}</button>
+                        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn-success btn">Novo {{ $tipo }} </a>
                     </div>
                 </div>
                 </div>

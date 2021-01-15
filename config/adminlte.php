@@ -238,7 +238,7 @@ return [
                 [
                     'text' => 'Novo Fornecedor',
                     'icon'    => 'fas fa-file nav-icon',
-                    'url'  => '#',
+                    'url'  => 'empresas/create?tipo=fornecedor',
                 ],
                 [
                     'text' => 'Lista de Fornecedores',
@@ -256,7 +256,7 @@ return [
                 [
                     'text' => 'Novo Cliente',
                     'icon'    => 'fas fa-file nav-icon',
-                    'url'  => '#',
+                    'url'  => 'empresas/create?tipo=cliente',
                 ],
                 [
                     'text' => 'Lista de Clientes',
