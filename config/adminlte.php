@@ -243,7 +243,7 @@ return [
                 [
                     'text' => 'Lista de Fornecedores',
                     'icon'    => 'fas fa-list-alt nav-icon',
-                    'url'  => '#',
+                    'url'  => 'empresas?tipo=fornecedor',
                 ]
 
             ]
@@ -261,7 +261,7 @@ return [
                 [
                     'text' => 'Lista de Clientes',
                     'icon'    => 'fas fa-list-alt nav-icon',
-                    'url'  => '#',
+                    'url'  => 'empresas?tipo=cliente',
                 ]
 
             ]
