@@ -43,7 +43,7 @@
         <div class="form-group row">
             <label for="celular" class="col-form-label col-sm-3 required">Celular *</label>
             <div class="col-sm-9">
-                <input type="text" name="celular" id="celular" required="required" maxlength="15" class="form-control" placeholder="Digite um nº de celular...">
+                <input type="text" name="celular" id="celular" required="required" maxlength="11" class="form-control" placeholder="Digite um nº de celular...">
             </div>
         </div>
     </div>
@@ -61,51 +61,51 @@
         <div class="form-group row">
             <label for="telefone" class="col-form-label col-sm-3">Telefone</label>
             <div class="col-sm-9">
-                <input type="text" name="telefone" id="telefone" maxlength="15" class="form-control" placeholder="Digite um nº de telefone...">
+                <input type="text" name="telefone" id="telefone" maxlength="10" class="form-control" placeholder="Digite um nº de telefone...">
             </div>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-8">
         <div class="form-group row">
-            <label for="cep" class="col-form-label col-sm-4 required">CEP *</label>
-            <div class="col-sm-8">
-                <input type="text" name="cep" id="cep" required="required" maxlength="9" class="form-control" placeholder="Digite o cep...">
-            </div>
-        </div>
-    </div>
-    <div class="col-sm-9">
-        <div class="form-group row">
-            <label for="logradouro" class="col-form-label col-sm-2 required">Logradouro *</label>
-            <div class="col-sm-10">
+            <label for="logradouro" class="col-form-label col-sm-3 required">Logradouro *</label>
+            <div class="col-sm-9">
                 <input type="text" name="logradouro" id="logradouro" required="required" maxlength="150" class="form-control" placeholder="Digite um endereço válido...">
             </div>
         </div>
     </div>
+    <div class="col-sm-4">
+        <div class="form-group row">
+            <label for="cep" class="col-form-label col-sm-3 required">CEP *</label>
+            <div class="col-sm-9">
+                <input type="text" name="cep" id="cep" required="required" maxlength="9" class="form-control" placeholder="Digite o cep...">
+            </div>
+        </div>
+    </div>
 </div>
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col-sm-5">
         <div class="form-group row">
             <label for="bairro" class="col-form-label col-sm-3 required">Bairro *</label>
             <div class="col-sm-9">
-                <input type="text" name="bairro" id="bairro" required="required" maxlength="100" class="form-control" placeholder="Digite o bairro...">
+                <input type="text" name="bairro" id="bairro" required="required" maxlength="50" class="form-control" placeholder="Digite o bairro...">
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-5">
         <div class="form-group row">
             <label for="cidade" class="col-form-label col-sm-3 required">Cidade *</label>
             <div class="col-sm-9">
-                <input type="text" name="cidade" id="cidade" required="required" maxlength="100" class="form-control" placeholder="Digite a cidade...">
+                <input type="text" name="cidade" id="cidade" required="required" maxlength="50" class="form-control" placeholder="Digite a cidade...">
             </div>
         </div>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-2">
         <div class="form-group row">
-            <label for="estado" class="col-form-label col-sm-3 required">Estado *</label>
-            <div class="col-sm-9">
-                <input type="text" name="estado" id="estado" required="required" maxlength="150" class="form-control" placeholder="Digite o Estado...">
+            <label for="estado" class="col-form-label col-sm-4 required">UF *</label>
+            <div class="col-sm-8">
+                <input type="text" name="estado" id="estado" required="required" maxlength="150" class="form-control" placeholder="UF...">
             </div>
         </div>
     </div>

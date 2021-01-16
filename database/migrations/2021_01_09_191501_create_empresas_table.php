@@ -23,16 +23,17 @@ class CreateEmpresasTable extends Migration
             $table->char('ie_rg', 25)->nullable();
 
             $table->string('contato', 100);
-            $table->char('celular', 9);
+            $table->char('celular', 11);
             $table->string('email', 100);
-            $table->char('telefone', 9)->nullable();
+            $table->char('telefone', 10)->nullable();
 
             $table->char('cep', 8);
             $table->string('logradouro', 100);
+            $table->string('bairro', 50);
             $table->string('cidade', 50);
             $table->char('estado', 2);
 
-$table->text('observacao')->nullable();
+            $table->text('observacao')->nullable();
 
             $table->timestamps();
         });
