@@ -24,6 +24,7 @@ class EmpresaRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'tipo' => ['required', Rule::in(['cliente', 'fornecedor'])],
             'nome' => 'required|min:3|max:255',
@@ -31,15 +32,31 @@ class EmpresaRequest extends FormRequest
             'documento' => ['required'],
             'ie_rg'  => ['required'],
             'contato' => ['required','max:255'],
-            'celular' => ['required', 'size:11'],
+            'celular' => 'required|size:11',
             'email' => ['required', 'email'],
-            'telefone' => ['size:10'],
-            'cep' => ['required', 'size:8'],
+            'telefone' => 'size:10',
+            'cep' => 'required|size:8',
             'logradouro' => ['required', 'min:3', 'max:255'],
             'bairro' => ['required','max:50'],
             'cidade' => ['required','max:50'],
             'estado' => ['required','size:2'],
             'observacao'
         ];
+    }
+
+    //sobrescrevendo os campos para limpar as máscaras
+    public function validationData()
+    {
+
+        $campo = $this->all();
+
+        $campo['documento'] = str_replace(['.', ',', '/','-'], '', $campo['documento']);
+        $campo['celular'] = \str_replace(['(', ')', ' ','.', ',', '/','-'], '', $campo['celular']);
+        $campo['telefone'] = str_replace(['(', ')', ' ','.', ',', '/','-'], '', $campo['telefone']);
+        $campo['cep'] = str_replace([' ','.', ',', '/','-'], '', $campo['cep']);
+
+        $this->replace($campo);
+
+        return $campo;
     }
 }

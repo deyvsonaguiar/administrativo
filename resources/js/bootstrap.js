@@ -9,7 +9,8 @@ window._ = require('lodash');
 try {
     window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
-
+    require('overlayscrollbars');
+    require('../../vendor/almasaeed2010/adminlte/dist/js/adminlte');
     require('bootstrap');
 } catch (e) {}
 
@@ -40,3 +41,8 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     forceTLS: true
 // });
 
+/**Plugin de Máscaras - Jquery Mask */
+require('../../vendor/igorescobar/jquery-mask-plugin/dist/jquery.mask');
+
+/**Definição das Máscaras */
+require('../../resources/js/mascaras');

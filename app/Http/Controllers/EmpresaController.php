@@ -50,6 +50,7 @@ class EmpresaController extends Controller
     public function store(EmpresaRequest $request)
     {
         $tipo = $request->tipo;
+
         $empresa = Empresa::create($request->all());
 
         return redirect()->route('empresas.index', ['tipo' => $tipo]);
