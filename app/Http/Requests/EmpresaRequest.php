@@ -29,7 +29,7 @@ class EmpresaRequest extends FormRequest
             'tipo' => ['required', Rule::in(['cliente', 'fornecedor'])],
             'nome' => 'required|min:3|max:255',
             'razao_social' => ['max:255'],
-            'documento' => ['required'],
+            'documento' => $this->tipoValidacaoDocumento(),
             'ie_rg'  => ['required'],
             'contato' => ['required','max:255'],
             'celular' => 'required|size:11',
@@ -58,5 +58,19 @@ class EmpresaRequest extends FormRequest
         $this->replace($campo);
 
         return $campo;
+    }
+
+    /**
+     * Retorna o tipo de validação baseado no tamanho do campo documento
+     *
+     * @return void
+     */
+    private function tipoValidacaoDocumento()
+    {
+        if(strlen($this->documento) === 11) {
+            return ['required', 'cnpj'];
+        }
+
+        return ['required', 'cpf'];
     }
 }
