@@ -26,7 +26,7 @@ class EmpresaRequest extends FormRequest
     {
 
         return [
-            'tipo' => ['required', Rule::in(['cliente', 'fornecedor'])],
+            'tipo' => $this->validarTipo(),
             'nome' => 'required|min:3|max:255',
             'razao_social' => ['max:255'],
             'documento' => $this->tipoValidacaoDocumento(),
@@ -68,9 +68,23 @@ class EmpresaRequest extends FormRequest
     private function tipoValidacaoDocumento()
     {
         if(strlen($this->documento) === 11) {
-            return ['required', 'cnpj'];
+            return ['required', 'cpf'];
         }
 
-        return ['required', 'cpf'];
+        return ['required', 'cnpj'];
+    }
+
+    /**
+     * Verifica o método 'PUT ou POST' para validar o campo tipo
+     *
+     * @return void
+     */
+    private function validarTipo()
+    {
+        if($this->method() === 'POST') {
+            return ['required', Rule::in(['cliente', 'fornecedor'])];
+        }
+        return [];
+        //return ['required', Rule::in(['cliente', 'fornecedor'])]
     }
 }

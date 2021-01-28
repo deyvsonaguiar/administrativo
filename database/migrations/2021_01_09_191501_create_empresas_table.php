@@ -19,7 +19,7 @@ class CreateEmpresasTable extends Migration
             $table->char('tipo', 10);
             $table->string('nome');
             $table->string('razao_social')->nullable();
-            $table->char('documento', 14);
+            $table->char('documento', 18);
             $table->char('ie_rg', 25)->nullable();
 
             $table->string('contato', 100);

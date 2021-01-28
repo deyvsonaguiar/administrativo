@@ -43,13 +43,13 @@
                             <td>{{ $empresa->contato }}</td>
                             <td>{{ $empresa->celular }}</td>
                             <td style="text-align: center">
-                                <button type="button" class="btn btn-primary">
+                                <a href="{{ route('empresas.show', $empresa) }}" type="button" class="btn btn-primary">
                                     <i class="far fa-eye"></i>
-                                </button>
-                                <button type="button" class="btn btn-warning">
+                                </a>
+                                <a href="{{ route('empresas.edit', $empresa) }}" type="button" class="btn btn-warning">
                                     <i class="fas fa-edit"></i>
-                                </button>
-                                <button type="button" class="btn btn-danger">
+                                </a>
+                                <a href="{{ route('empresas.destroy', $empresa) }}" type="button" class="btn btn-danger">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </td>

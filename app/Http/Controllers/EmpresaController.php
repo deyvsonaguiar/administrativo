@@ -64,7 +64,7 @@ class EmpresaController extends Controller
      */
     public function show($id)
     {
-        //
+        return 'Estou no show';
     }
 
     /**
@@ -73,21 +73,23 @@ class EmpresaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Empresa $empresa)
     {
-        //
+        return view('empresa.edit', ['empresa' => $empresa]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param EmpresaRequest $request
+     * @param Empresa $empresa
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function update(EmpresaRequest $request, Empresa $empresa)
     {
-        //
+        //dd($request->empresa->documento);
+        $empresa->update($request->all());
+        return redirect()->route('empresas.show', $empresa);
     }
 
     /**
