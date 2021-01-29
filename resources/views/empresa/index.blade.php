@@ -16,7 +16,7 @@
                         <h3 class="card-title">Listagem de {{ $tipo }}</h3>
                     </div>
                     <div class="col-sm-2" style="text-align: end">
-                        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn-success btn">Novo {{ $tipo }} </a>
+                        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-block btn-outline-success btn-sm">Novo {{ $tipo }} </a>
                     </div>
                 </div>
                 </div>

@@ -39,8 +39,7 @@ class EmpresaRequest extends FormRequest
             'logradouro' => ['required', 'min:3', 'max:255'],
             'bairro' => ['required','max:50'],
             'cidade' => ['required','max:50'],
-            'estado' => ['required','size:2'],
-            'observacao'
+            'estado' => ['required','size:2']
         ];
     }
 

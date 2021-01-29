@@ -16,6 +16,9 @@
                     <div class="col-sm-10">
                         <h3 class="card-title">Detalhe de {{ $empresa->tipo }}</h3>
                     </div>
+                    <div class="col-sm-2" style="text-align: end">
+                        <a href="{{ route('empresas.index') }}?tipo={{ $empresa->tipo }}" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
+                    </div>
                 </div>
                 </div>
                 <div class="card-body">
@@ -61,10 +64,21 @@
                         </div>
                         <!-- /.row -->
                     </div>
-                          <!-- /.col -->
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-sm-2" style="text-align: start">
+                                <form action="{{ route('empresas.destroy', $empresa) }}?tipo={{ $empresa->tipo }}" method="post">
+                                    @method('DELETE')
+                                    @csrf
+                                    <button type="submit" class="btn btn-block btn-outline-danger btn-sm"
+                                    onclick="return confirm('Tem certeza que deseja apagar?')">Apagar</button>
+                                </form>
+                            </div>
                         </div>
-                        <!-- /.row -->
-                      </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+                </div>
                 </div>
             </div>
         </div>

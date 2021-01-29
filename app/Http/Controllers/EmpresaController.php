@@ -22,6 +22,7 @@ class EmpresaController extends Controller
         }
 
         $empresas = Empresa::todasPorTipo($tipo);
+
         return view('empresa.index', ['empresas' => $empresas, 'tipo' => $tipo]);
     }
 
@@ -53,7 +54,7 @@ class EmpresaController extends Controller
 
         $empresa = Empresa::create($request->all());
 
-        return redirect()->route('empresas.index', ['tipo' => $tipo]);
+        return redirect()->route('empresas.show', $empresa->id);
     }
 
     /**
@@ -98,8 +99,16 @@ class EmpresaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Empresa $empresa, Request $request)
     {
-        //
+        $tipo = $request->tipo;
+
+        if($tipo !== 'cliente' && $tipo !== 'fornecedor') {
+            return \abort(404);
+        }
+
+        $empresa->delete();
+
+        return redirect()->route('empresas.index', ['tipo' => $tipo]);
     }
 }

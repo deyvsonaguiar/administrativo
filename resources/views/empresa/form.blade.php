@@ -150,7 +150,8 @@
 </div>
 <div class="form-group row">
     <label for="observacao" class="col-form-label col-sm-2">Observação: </label>
-    <textarea value="{{ old('observacao', @$empresa->observacao) }}" type="text" name="observacao" id="observacao" class="form-control @error('observacao') is-invalid @enderror" maxlength="500" rows="3" placeholder="Insira uma observação..."></textarea>
+    <textarea value="{{ old('observacao', @$empresa->observacao) }}" type="text" name="observacao" id="observacao" class="form-control
+    @error('observacao') is-invalid @enderror" maxlength="500" rows="3" placeholder="Insira uma observação...">{{ old('observacao', @$empresa->observacao) }}</textarea>
     @error('observacao')
         <div class="alert alert-danger">{{ $message }}</div>
     @enderror
