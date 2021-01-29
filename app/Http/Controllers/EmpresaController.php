@@ -62,9 +62,9 @@ class EmpresaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Empresa $empresa)
     {
-        return 'Estou no show';
+        return view('empresa.show', ['empresa' => $empresa]);
     }
 
     /**
