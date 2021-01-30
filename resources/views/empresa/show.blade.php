@@ -39,7 +39,12 @@
                         <div class="row invoice-info">
                             <div class="col-sm-4 invoice-col">
                                 <strong>Razão Social: </strong>{{ $empresa->razao_social }}<br>
-                                <strong>CNPJ/CPF: </strong>{{ $empresa->documento }}<br>
+                                <strong>CNPJ/CPF: </strong>
+                                @if(strlen($empresa->documento) === 11)
+                                    {{ mask($empresa->documento, '###.###.###-##') }}<br>
+                                    @else
+                                    {{ mask($empresa->documento, '##.###.###/####-##') }}<br>
+                                    @endif
                                 <strong>IE/RG: </strong>{{ $empresa->ie_rg }}<br>
                             </div>
                             <!-- /.col -->
@@ -47,14 +52,14 @@
                             <address>
                                 <strong>ENDEREÇO: </strong><br>
                                 {{ $empresa->logradouro }}, {{ $empresa->bairro }}<br>
-                                {{ $empresa->cidade }} - {{ $empresa->estado }} - <strong>CEP: </strong>{{ $empresa->cep }}<br>
+                                {{ $empresa->cidade }} - {{ $empresa->estado }} - <strong>CEP: </strong>{{ mask($empresa->cep, '##.###-###') }}<br>
                             </address>
                             </div>
                             <div class="col-sm-4 invoice-col">
                                 <strong>Contato: </strong>{{ $empresa->contato }}<br>
-                                <strong>Celular: </strong>{{ $empresa->celular }}<br>
+                                <strong>Celular: </strong>{{ mask($empresa->celular, '(##) #####-####') }}<br>
                                 <strong>Email: </strong>{{ $empresa->email }}<br>
-                                <strong>Telefone: </strong>{{ $empresa->telefone }}<br>
+                                <strong>Telefone: </strong>{{ mask($empresa->telefone, '(##) ####-####') }}<br>
                             </div>
                         </div>
                         <div class="row">

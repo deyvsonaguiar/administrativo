@@ -37,7 +37,7 @@
                             <td>{{ $empresa->id }}</td>
                             <td>{{ $empresa->nome }}</td>
                             <td>{{ $empresa->contato }}</td>
-                            <td>{{ $empresa->celular }}</td>
+                            <td>{{ mask($empresa->celular, '(##) #####-####') }}</td>
                             <td style="text-align: center">
                                 <a href="{{ route('empresas.show', $empresa) }}" type="button" class="btn btn-primary">
                                     <i class="far fa-eye"></i>
