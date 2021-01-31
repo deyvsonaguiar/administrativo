@@ -3,23 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empresa;
+use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Http\Requests\EmpresaRequest;
+use Symfony\Component\HttpFoundation\Response;
 
 class EmpresaController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Undocumented function
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return View
      */
-    public function index(Request $request)
+    public function index(Request $request): View
     {
         $tipo = $request->tipo;
 
-        if($tipo !== 'cliente' && $tipo !== 'fornecedor') {
-            return \abort(404);
-        }
+        $this->validaTipo($request->tipo);
 
         $empresas = Empresa::todasPorTipo($tipo);
 
@@ -27,28 +28,25 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Undocumented function
      *
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return View
      */
-    public function create(Request $request)
+    public function create(Request $request): View
     {
-        $tipo = $request->tipo;
+        $this->validaTipo($request->tipo);
 
-        if($tipo !== 'cliente' && $tipo !== 'fornecedor') {
-            return \abort(404);
-        }
-
-        return view('empresa.create', ['tipo' => $tipo]);
+        return view('empresa.create', ['tipo' => $request->tipo]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Undocumented function
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param EmpresaRequest $request
+     * @return Response
      */
-    public function store(EmpresaRequest $request)
+    public function store(EmpresaRequest $request): Response
     {
         $tipo = $request->tipo;
 
@@ -58,57 +56,68 @@ class EmpresaController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Undocumented function
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Empresa $empresa
+     * @return View
      */
-    public function show(Empresa $empresa)
+    public function show(Empresa $empresa): View
     {
         return view('empresa.show', ['empresa' => $empresa]);
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Undocumented function
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Empresa $empresa
+     * @return View
      */
-    public function edit(Empresa $empresa)
+    public function edit(Empresa $empresa): View
     {
         return view('empresa.edit', ['empresa' => $empresa]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Undocumented function
      *
      * @param EmpresaRequest $request
      * @param Empresa $empresa
-     * @return void
+     * @return Response
      */
-    public function update(EmpresaRequest $request, Empresa $empresa)
+    public function update(EmpresaRequest $request, Empresa $empresa): Response
     {
-        //dd($request->empresa->documento);
         $empresa->update($request->all());
+
         return redirect()->route('empresas.show', $empresa);
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Undocumented function
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Empresa $empresa
+     * @param Request $request
+     * @return Response
      */
-    public function destroy(Empresa $empresa, Request $request)
+    public function destroy(Empresa $empresa, Request $request): Response
     {
-        $tipo = $request->tipo;
-
-        if($tipo !== 'cliente' && $tipo !== 'fornecedor') {
-            return \abort(404);
-        }
+        $this->validaTipo($request->tipo);
 
         $empresa->delete();
 
-        return redirect()->route('empresas.index', ['tipo' => $tipo]);
+        return redirect()->route('empresas.index', ['tipo' => $request->tipo]);
+    }
+
+    /**
+     * Verifica o tipo de Empresa
+     *
+     * @param [type] $tipo
+     * @return void
+     */
+    public function validaTipo($tipo)
+    {
+        if($tipo !== 'cliente' && $tipo !== 'fornecedor') {
+            \abort(404);
+        }
+
     }
 }

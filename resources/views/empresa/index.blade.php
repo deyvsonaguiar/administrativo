@@ -32,7 +32,7 @@
                           </tr>
                         </thead>
                         <tbody>
-                        @foreach ($empresas as $empresa)
+                        @forelse ($empresas as $empresa)
                           <tr>
                             <td>{{ $empresa->id }}</td>
                             <td>{{ $empresa->nome }}</td>
@@ -50,7 +50,15 @@
                                 </button>
                             </td>
                           </tr>
-                        @endforeach
+                          @empty
+                          <tr>
+                            <td style="text-align: center">#</td>
+                            <td style="text-align: center"> -- </td>
+                            <td style="text-align: center">Nenhum registro cadastrato!</td>
+                            <td style="text-align: center"> -- </td>
+                            <td style="text-align: center"> -- </td>
+                          </tr>
+                        @endforelse
                         </tbody>
                       </table>
                 </div>
