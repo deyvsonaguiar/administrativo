@@ -114,7 +114,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-5">
+    <div class="col-sm-4">
         <div class="form-group row">
             <label for="bairro" class="col-form-label col-sm-3 required">Bairro *</label>
             <div class="col-sm-9">
@@ -125,7 +125,7 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-5">
+    <div class="col-sm-4">
         <div class="form-group row">
             <label for="cidade" class="col-form-label col-sm-3 required">Cidade *</label>
             <div class="col-sm-9">
@@ -136,11 +136,17 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-2">
+    <div class="col-sm-4">
         <div class="form-group row">
-            <label for="estado" class="col-form-label col-sm-4 required">UF *</label>
-            <div class="col-sm-8">
-                <input value="{{ old('estado', @$empresa->estado) }}" type="text" name="estado" id="estado" class="form-control @error('estado') is-invalid @enderror" placeholder="UF...">
+            <label for="estado" class="col-form-label col-sm-3 required">UF *</label>
+            <div class="col-sm-9">
+                    <select class="form-control @error('estado') is-invalid @enderror" name="estado" id="estado">
+                        <option value="">Selecione...</option>
+                        @foreach(estados() as $sigla => $nome)
+                        <option {{ @$empresa->estado == $sigla ? 'selected' : '' }} value="{{ $sigla }}">{{ $nome }}</option>
+                        @endforeach
+                    </select>
+
                 @error('estado')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
