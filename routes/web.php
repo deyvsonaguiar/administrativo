@@ -28,3 +28,5 @@ Route::get('/home', function() {
 })->name('home')->middleware('auth');
 
 Route::resource('empresas', 'EmpresaController');
+
+Route::resource('produtos', 'ProdutosController');
