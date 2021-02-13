@@ -75,8 +75,7 @@
                                 <form action="{{ route('empresas.destroy', $empresa) }}?tipo={{ $empresa->tipo }}" method="post">
                                     @method('DELETE')
                                     @csrf
-                                    <button type="submit" class="btn btn-block btn-outline-danger btn-sm"
-                                    onclick="return confirm('Tem certeza que deseja apagar?')">Apagar</button>
+                                    <button type="submit" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm('Tem certeza que deseja apagar?')">Apagar</button>
                                 </form>
                             </div>
                         </div>

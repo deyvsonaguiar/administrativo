@@ -12,13 +12,13 @@
             <div class="card">
                 <div class="card-header">
                     <div class="row">
-                    <div class="col-sm-10">
-                        <h3 class="card-title">Listagem de {{ $tipo }}</h3>
+                        <div class="col-sm-10">
+                            <h3 class="card-title">Listagem de {{ $tipo }}</h3>
+                        </div>
+                        <div class="col-sm-2" style="text-align: end">
+                            <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-block btn-outline-success btn-sm">Novo {{ $tipo }} </a>
+                        </div>
                     </div>
-                    <div class="col-sm-2" style="text-align: end">
-                        <a href="{{ route('empresas.create') }}?tipo={{ $tipo }}" class="btn btn-block btn-outline-success btn-sm">Novo {{ $tipo }} </a>
-                    </div>
-                </div>
                 </div>
                 <div class="card-body">
                     <table class="table table-bordered">

@@ -1,18 +1,38 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Sistema Administrativo')
+
+@section('content_header')
+    <h1 class="m-0 text-dark">Editar Produto</h1>
+@stop
+
+@section('breadcrumb')
+    <li class="breadcrumb-item">
+        <a href="{{ url('/produtos') }}">Listagem Produto</a>
+    </li>
+
+    <li class="breadcrumb-item">
+        <a href="{{ url('/produtos/' . $produto->id . '/edit') }}">Editar Produto</a>
+    </li>
+@endsection
 
 @section('content')
-    <div class="container">
         <div class="row">
-
-            <div class="col-md-9">
+            <div class="col-12">
                 <div class="card">
-                    <div class="card-header">Edit Produto #{{ $produto->id }}</div>
-                    <div class="card-body">
-                        <a href="{{ url('/produtos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <br />
-                        <br />
 
-                        @if ($errors->any())
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <h3 class="card-title">Altere os dados necessários:</h3>
+                            </div>
+                            <div class="col-sm-2" style="text-align: end">
+                            <a href="{{ url('/produtos') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                         @if ($errors->any())
                             <ul class="alert alert-danger">
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
@@ -32,5 +52,4 @@
                 </div>
             </div>
         </div>
-    </div>
 @endsection

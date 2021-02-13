@@ -10,6 +10,6 @@
 </div>
 
 
-<div class="form-group">
-    <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">
+<div class="card-footer clearfix">
+    <input class="btn-info btn" type="submit" value="{{ $formMode === 'edit' ? 'Atualizar' : 'Criar' }}">
 </div>

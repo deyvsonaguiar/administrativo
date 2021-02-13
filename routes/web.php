@@ -30,3 +30,24 @@ Route::get('/home', function() {
 Route::resource('empresas', 'EmpresaController');
 
 Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');

@@ -1,27 +1,30 @@
-@extends('layouts.app')
+@extends('adminlte::page')
+
+@section('title', 'Sistema Administrativo')
+
+@section('breadcrumb')
+    <li class="breadcrumb-item"><a href="{{ url('produtos') }}">Listagem de Produto</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('produtos', $produto->id) }}">Detalhes de Produto</a></li>
+@endsection
 
 @section('content')
-    <div class="container">
         <div class="row">
-
-            <div class="col-md-9">
+            <div class="col-12">
                 <div class="card">
-                    <div class="card-header">Produto {{ $produto->id }}</div>
+
+                    <div class="card-header">
+                    <div class="row">
+                        <div class="col-sm-10">
+                            <h3 class="card-title">Detalhes de Produto {{ $produto->id }}</h3>
+                        </div>
+                        <div class="col-sm-2" style="text-align: end">
+                        <a href="{{ url('/produtos') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
+                        </div>
+                    </div>
+                    </div>
                     <div class="card-body">
-
-                        <a href="{{ url('/produtos') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
-                        <a href="{{ url('/produtos/' . $produto->id . '/edit') }}" title="Edit Produto"><button class="btn btn-primary btn-sm"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button></a>
-
-                        <form method="POST" action="{{ url('produtos' . '/' . $produto->id) }}" accept-charset="UTF-8" style="display:inline">
-                            {{ method_field('DELETE') }}
-                            {{ csrf_field() }}
-                            <button type="submit" class="btn btn-danger btn-sm" title="Delete Produto" onclick="return confirm(&quot;Confirm delete?&quot;)"><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
-                        </form>
-                        <br/>
-                        <br/>
-
                         <div class="table-responsive">
-                            <table class="table">
+                            <table class="table table-bordered">
                                 <tbody>
                                     <tr>
                                         <th>ID</th><td>{{ $produto->id }}</td>
@@ -31,9 +34,19 @@
                             </table>
                         </div>
 
+                        <div class="content">
+                        <div class="row">
+                            <div class="col-sm-2" style="text-align: start">
+                                <form method="POST" action="{{ url('produtos' . '/' . $produto->id) }}" accept-charset="UTF-8" style="display:inline">
+                                    {{ method_field('DELETE') }}
+                                    {{ csrf_field() }}
+                                    <button type="submit" class="btn btn-block btn-outline-danger btn-sm" onclick="return confirm(&quot;Tem certeza que quer apagar?&quot;)">Apagar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 @endsection
