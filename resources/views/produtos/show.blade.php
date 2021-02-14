@@ -1,6 +1,8 @@
 @extends('adminlte::page')
 
-@section('title', 'Sistema Administrativo')
+@section('title')
+Detalhes de Produto
+@endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ url('produtos') }}">Listagem de Produto</a></li>

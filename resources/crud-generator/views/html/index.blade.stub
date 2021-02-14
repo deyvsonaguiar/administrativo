@@ -1,6 +1,8 @@
 @extends('adminlte::page')
 
-@section('title', 'Sistema Administrativo')
+@section('title')
+%%modelName%%
+@endsection
 
 @section('breadcrumb')
     <li class="breadcrumb-item"><a href="{{ url('%%routeGroup%%%%viewName%%') }}">Listagem de %%modelName%%</a></li>

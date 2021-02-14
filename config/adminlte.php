@@ -285,6 +285,18 @@ return [
 
             ]
         ],
+        [
+            'text'    => 'Cadastros',
+            'icon'    => 'fas fa-box nav-icon',
+            'classes' => 'menu-open',
+            'submenu' => [
+                [
+                    'text' => 'Produtos',
+                    'icon'    => 'fas fa-boxes nav-icon',
+                    'url'  => 'produtos',
+                ],
+            ]
+        ],
 
     ],
 

@@ -51,3 +51,7 @@ Route::resource('produtos', 'ProdutosController');
 Route::resource('produtos', 'ProdutosController');
 Route::resource('produtos', 'ProdutosController');
 Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');
+Route::resource('produtos', 'ProdutosController');

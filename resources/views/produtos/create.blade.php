@@ -1,6 +1,8 @@
 @extends('adminlte::page')
 
-@section('title', 'Sistema Administrativo')
+@section('title')
+Criação de Produto
+@endsection
 
 @section('content_header')
     <h1 class="m-0 text-dark">Novo Produto</h1>
