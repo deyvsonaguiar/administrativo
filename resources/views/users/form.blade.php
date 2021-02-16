@@ -14,6 +14,17 @@
     {!! $errors->first('password', '<p class="help-block">:message</p>') !!}
 </div>
 
+<div class="form-group">
+    <label for="password" class="control-label">Confirmar Senha</label>
+    <input type="password" name="password_confirmation"
+           class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : '' }}"
+           placeholder="{{ __('adminlte::adminlte.retype_password') }}">
+    @if($errors->has('password_confirmation'))
+        <div class="invalid-feedback">
+            <strong>{{ $errors->first('password_confirmation') }}</strong>
+        </div>
+    @endif
+</div>
 
 <div class="card-footer clearfix">
     <input class="btn-info btn" type="submit" value="{{ $formMode === 'edit' ? 'Atualizar' : 'Criar' }}">

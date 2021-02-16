@@ -234,6 +234,11 @@ return [
             'icon'    => 'fas fa-home nav-icon',
         ],
         [
+            'text'    => 'Usuários',
+            'url'     => 'users',
+            'icon'    => 'fas fa-users nav-icon',
+        ],
+        [
             'text'    => 'Entrada',
             'icon'    => 'fas fa-arrow-circle-down nav-icon',
             'classes' => 'menu-open',
