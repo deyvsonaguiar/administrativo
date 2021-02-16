@@ -1,5 +1,7 @@
 <?php
 
+use phpDocumentor\Reflection\PseudoTypes\False_;
+
 return [
 
     /*
@@ -45,12 +47,12 @@ return [
     |
     */
 
-    'logo' => '</b>ADMINISTRATIVO',
-    'logo_img' => true,
-    'logo_img_class' => null,
+    'logo' => '<b>Sistema</b>ADM',
+    'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
+    'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
-    'logo_img_xl_class' => null,
-    'logo_img_alt' => null,
+    'logo_img_xl_class' => 'brand-image-xs',
+    'logo_img_alt' => 'SistemaADM',
 
     /*
     |--------------------------------------------------------------------------
@@ -65,7 +67,7 @@ return [
     */
 
     'usermenu_enabled' => true,
-    'usermenu_header' => true,
+    'usermenu_header' => false,
     'usermenu_header_class' => 'bg-primary',
     'usermenu_image' => false,
     'usermenu_desc' => false,
@@ -85,9 +87,9 @@ return [
 
     'layout_topnav' => null,
     'layout_boxed' => null,
-    'layout_fixed_sidebar' => true,
+    'layout_fixed_sidebar' => null,
     'layout_fixed_navbar' => null,
-    'layout_fixed_footer' => true,
+    'layout_fixed_footer' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -148,7 +150,7 @@ return [
     'sidebar_collapse' => false,
     'sidebar_collapse_auto_size' => false,
     'sidebar_collapse_remember' => false,
-    'sidebar_collapse_remember_no_transition' => true,
+    'sidebar_collapse_remember_no_transition' => false,
     'sidebar_scrollbar_theme' => 'os-theme-light',
     'sidebar_scrollbar_auto_hide' => 'l',
     'sidebar_nav_accordion' => true,
@@ -207,7 +209,7 @@ return [
     |
     */
 
-    'enabled_laravel_mix' => true,
+    'enabled_laravel_mix' => false,
     'laravel_mix_css_path' => 'css/app.css',
     'laravel_mix_js_path' => 'js/app.js',
 
