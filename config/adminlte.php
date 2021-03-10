@@ -282,12 +282,12 @@ return [
                 [
                     'text' => 'Novo Lançamento',
                     'icon'    => 'fas fa-dollar-sign nav-icon',
-                    'url'  => '#',
+                    'url'  => 'financeiro/create',
                 ],
                 [
                     'text' => 'Relatório Financeiro',
                     'icon'    => 'fas fa-chart-pie nav-icon',
-                    'url'  => '#',
+                    'url'  => 'financeiro',
                 ]
 
             ]

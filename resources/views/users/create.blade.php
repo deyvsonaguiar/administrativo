@@ -27,9 +27,9 @@ Criação de User
                             <div class="col-sm-10">
                                 <h3 class="card-title">Insira os dados:</h3>
                             </div>
-                        </div>
-                        <div class="col-sm-2" style="text-align: end">
-                        <a href="{{ url('/users') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
+                            <div class="col-sm-2" style="text-align: end">
+                                <a href="{{ url('/users') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
+                            </div>
                         </div>
                     </div>
                     <div class="card-body">

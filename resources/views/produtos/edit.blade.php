@@ -28,8 +28,8 @@ Edição de Produto
                             <div class="col-sm-10">
                                 <h3 class="card-title">Altere os dados necessários:</h3>
                             </div>
-                            <div class="col-sm-2" style="text-align: end">
-                            <a href="{{ url('/produtos') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
+                            <div class="row col-sm-2">
+                                <a href="{{ url('/produtos') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
                             </div>
                         </div>
                     </div>

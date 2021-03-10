@@ -29,7 +29,7 @@ Edição de %%modelName%%
                                 <h3 class="card-title">Altere os dados necessários:</h3>
                             </div>
                             <div class="col-sm-2" style="text-align: end">
-                            <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
+                                <a href="{{ url('/%%routeGroup%%%%viewName%%') }}" title="Voltar" class="btn btn-block btn-outline-primary btn-sm">Voltar</a>
                             </div>
                         </div>
                     </div>
