@@ -47,8 +47,6 @@ Criação de %%modelName%%
                             @include ('%%viewTemplateDir%%.form', ['formMode' => 'create'])
 
                         </form>
-
-
                 </div>
             </div>
         </div>
