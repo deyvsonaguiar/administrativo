@@ -1,8 +1,7 @@
 <?php
 
+use Database\Seeders\UserSeeder;
 use Illuminate\Database\Seeder;
-use Database\Seeders\CityTableSeeder;
-use Database\Seeders\StateTableSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,7 +12,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //$this->call(DatabaseSeeder::class);
+        $this->call(UserSeeder::class);
 
     }
 }
