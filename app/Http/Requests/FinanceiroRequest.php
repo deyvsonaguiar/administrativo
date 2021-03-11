@@ -40,7 +40,7 @@ class FinanceiroRequest extends FormRequest
 
         $campo = $this->all();
 
-        $campo['valor'] = str_replace(['.', ',' ],['','.'], $campo['valor']);
+        $campo['valor'] = numero_br_para_iso($campo['valor']);
         $campo['data'] = data_br_para_iso($campo['data']);
 
 
